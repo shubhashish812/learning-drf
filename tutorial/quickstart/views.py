@@ -1,7 +1,8 @@
 # Group common behavior together using view set rather than creating multiple views
 from django.contrib.auth.models import User, Group
-from rest_framework import viewsets
 from rest_framework import permissions
+from rest_framework import viewsets
+
 from tutorial.quickstart.serializers import UserSerializer, GroupSerializer
 
 
@@ -17,5 +18,3 @@ class GroupViewSet(viewsets.ModelViewSet):
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
-
-
